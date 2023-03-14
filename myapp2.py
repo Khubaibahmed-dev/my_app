@@ -305,6 +305,7 @@ used = set()
 # # mylist = [u'nowplaying', u'PBS', u'PBS', u'nowplaying', u'job', u'debate', u'thenandnow']
 unique = [x for x in temp_final if x not in used and (used.add(x) or True)]
 # unique
+st.write(unique)
 
 file = open('uique2.txt', 'w',encoding="utf-8")
 for item in unique:
