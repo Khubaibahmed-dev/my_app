@@ -4,7 +4,7 @@ from functionforDownloadButtons import download_button
 
 
 uploaded_files = st.file_uploader("Choose a PDF file", accept_multiple_files=True,type="pdf")
-keywords = st.text_input("Write Keywords with space")
+keywords = st.text_input("Write Keywords with commas")
 print(keywords)
 
 comb_pdf_list = []
@@ -275,7 +275,7 @@ for elem in range(len(Input_string)):
 # print('Keyword list: ', user_list)
 # Input = ['Scope and Method', 'abstract']  #
 # Input_string = outer
-user_list = keywords.split()
+user_list = keywords.split(", ")
 # print list
 # print('Keyword list: ', user_list)
 Input = user_list  #
@@ -314,14 +314,10 @@ file.close()
 if unique is not None:
     c29, c30, c31 = st.columns([1, 1, 2])
 
+
     with c29:
-
-        CSVButton = download_button(
-            unique,
-            "File.csv",
-            "Download to CSV",
-        )
-
+        with open('uique2.txt','rb') as f:
+            st.download_button('Download TXT File', f)
 
 
 
